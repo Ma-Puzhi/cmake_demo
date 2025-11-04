@@ -1,0 +1,8 @@
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/install/strip.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/install/local.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/edit_cache.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/main.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/install.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/list_install_components.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/rebuild_cache.dir
+/home/mapuzhi/deploy/cmake_demo/Mylib/build/CMakeFiles/mylib.dir

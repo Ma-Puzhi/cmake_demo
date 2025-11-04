@@ -1,0 +1,3 @@
+/home/mapuzhi/deploy/cmake_demo/User/build/CMakeFiles/rebuild_cache.dir
+/home/mapuzhi/deploy/cmake_demo/User/build/CMakeFiles/edit_cache.dir
+/home/mapuzhi/deploy/cmake_demo/User/build/CMakeFiles/main.dir

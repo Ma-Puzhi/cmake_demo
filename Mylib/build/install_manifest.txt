@@ -1,0 +1,6 @@
+/usr/local/Mylib/mylib/lib/shared/libmylib.so
+/usr/local/Mylib/mylib/lib/cmake/MylibTargets.cmake
+/usr/local/Mylib/mylib/lib/cmake/MylibTargets-noconfig.cmake
+/usr/local/Mylib/mylib/include/mylib.h
+/usr/local/Mylib/mylib/lib/cmake/MylibConfig.cmake
+/usr/local/Mylib/mylib/lib/cmake/MylibConfigVersion.cmake

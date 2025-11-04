@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/main.dir/main.cpp.o  -o main  -Wl,-rpath,/usr/local/Mylib/mylib/lib/shared /usr/local/Mylib/mylib/lib/shared/libmylib.so 
