@@ -1,0 +1,43 @@
+# 在模板文件中，必不可少的部分是让CMake能够安全、正确地删除已经安装的文件
+# 在CMake安装过程中会生成一个文件build/install_manifest.txt
+# 里面列出了所有被安装的路径，每行一个
+# 模板文件需要找到这个被安装路径清单：
+if(NOT EXISTS "/home/mpz/deploy/cmake_demo/Mylib/build/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: /home/mpz/deploy/cmake_demo/Mylib/build/install_manifest.txt")
+endif()
+
+file(READ "/home/mpz/deploy/cmake_demo/Mylib/build/install_manifest.txt" files)
+string(REGEX REPLACE "\n" ";" files "${files}")
+# /home/mpz/deploy/cmake_demo/Mylib/build 会在配置阶段替换为当前构建目录；
+# 读取内容并把换行符换成 ; 以便在 foreach 中迭代。
+
+# 遍历文件并删除
+foreach(file ${files})
+    if(EXISTS "${file}" OR IS_SYMLINK "${file}")
+        message(STATUS "Removing ${file}")
+        execute_process(COMMAND "${CMAKE_COMMAND}" -E remove "${file}")
+    else()
+        message(STATUS "File ${file} does not exist.")
+    endif()
+endforeach()
+
+# 清空空目录
+set(_dirs_to_check "")
+foreach(file ${files})
+    get_filename_component(dir "${file}" DIRECTORY)
+    list(APPEND _dirs_to_check "${dir}")
+endforeach()
+
+# 按路径深度逆序排序（从最深层开始删）
+list(SORT _dirs_to_check ORDER DESCENDING)
+list(REMOVE_DUPLICATES _dirs_to_check)
+
+foreach(dir ${_dirs_to_check})
+    if(IS_DIRECTORY "${dir}")
+        file(GLOB children "${dir}/*")
+        if(children STREQUAL "")
+            message(STATUS "Removing empty directory: ${dir}")
+            execute_process(COMMAND rmdir "${dir}" ERROR_QUIET)
+        endif()
+    endif()
+endforeach()

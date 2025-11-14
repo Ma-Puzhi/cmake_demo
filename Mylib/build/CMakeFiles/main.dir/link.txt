@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/main.dir/main.cpp.o  -o main  -Wl,-rpath,/home/mapuzhi/deploy/cmake_demo/Mylib/build libmylib.so 
+/usr/bin/c++ CMakeFiles/main.dir/main.cpp.o -o main  -Wl,-rpath,/home/mpz/deploy/cmake_demo/Mylib/build libmylib.so 
