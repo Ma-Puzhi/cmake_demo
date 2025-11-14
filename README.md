@@ -12,7 +12,7 @@ sudo make install
 
 `如果想将已经安装的库删除，只需在build目录下执行：`
 ```cpp
-sudo make unistall
+sudo make uninstall
 ```
 
 # 编译使用文档
